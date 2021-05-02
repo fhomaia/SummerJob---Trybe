@@ -6,7 +6,7 @@
   <details>
     <summary> <strong>Conteúdos</strong> </summary>
     
-    1. Application Programming Interface (API) 
+    1. [Application Programming Interface (API)](#Application-Programming-Interface-(API))
     2. Relembrando o fluxo assíncrono
     3. Promises
     4. Para fixar
@@ -24,4 +24,21 @@ ___
 
 ### Por que isso é importante?
 
-Se já tínhamos uma implementação de funções assíncronas, por que a preocupação de criar todo um novo padrão para podermos ter exatamente a mesma coisa? O ganho que se tem ao utilizar _Promises_ não está atrelado à funcionalidade em si mas à **organização do código**: ter um código mais enxuto, mais fácil de ler, mais fácil de alterar, de identificar problemas e de consertá-los, ou seja, um **código mais limpo**.
+Se já tínhamos uma implementação de funções assíncronas, por que a preocupação de criar todo um novo padrão para podermos ter exatamente a mesma coisa? O ganho que se tem ao utilizar _Promises_ não está atrelado à funcionalidade em si mas à **organização do código**: ter um código mais enxuto, mais fácil de ler, mais fácil de alterar, de identificar problemas e de consertá-los, ou seja, um **código mais limpo**. Não é à toa que _Promises_ são uma das formas mais populares de se escrever operações assíncronas em JavaScript hoje em dia.
+
+___
+
+### Conteúdo
+### Application Programming Interface (API)
+
+Dando mais contexto ao uso das _Promises_ falaremos sobre as **APIs**. Mas o que seria uma API?
+
+API é o acrônimo para "Application Programming Interface" que significa em tradução para o português "**Interface** de Programação de Aplicativos".Ou seja,  nada mais é do que uma forma de comunicação entre sistemas. As APIs permitem a **integração entre dois sistemas**, em que um deles fornece informações e serviços que podem ser utilizados pelo outro.
+
+Para assimilar melhor o conceito podemos fazer uma analogia com a seguinte situação: vamos supor que você esteja em um restaurante, olhe para o menu e se interesse por um dos itens. Como você faz pra que o restaurante fique ciente do seu interesse e entregue seu pedido? 
+Normalmente, solicitamos ao garçom, pois ele tem acesso à cozinha e poderá comunicar seu pedido ao chefe  e  retorná-lo à mesa quando tudo estiver pronto. Nesta metáfora você representa um sistema e a cozinha representa outro. Para requerer algo do sistema “cozinha” é necessário o garçom, que neste caso representa uma API.
+
+<img src="https://webstockreview.net/images/clipart-restaurant-hotel-restaurant-1.png" alt="drawing" width="400"/>
+
+
+
