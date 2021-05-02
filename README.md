@@ -2,7 +2,7 @@
 
 ### Tópicos
 * [O que vamos aprender?](#O-que-vamos-aprender?)
-* [Por que isso é importante?](#O-que-vamos-aprender?)
+* [Por que isso é importante?](https://github.com/fhomaia/SummerJob---Trybe/blob/master/README.md#por-que-isso-%C3%A9-importante)
   <details>
     <summary> <strong>Conteúdos</strong> </summary>
     
