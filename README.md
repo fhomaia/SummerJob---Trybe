@@ -7,7 +7,7 @@
     <summary> <strong>Conteúdos</strong> </summary>
     
     1. [Application Programming Interface (API)](#Application-Programming-Interface-(API))
-    2. Relembrando o fluxo assíncrono
+    2. [O fluxo assíncrono e as APIs](#O-fluxo-assíncrono-e-as-APIs)
     3. Promises
     4. Para fixar
   </details> 
@@ -40,5 +40,8 @@ Normalmente, solicitamos ao garçom, pois ele tem acesso à cozinha e poderá co
 
 <img src="https://webstockreview.net/images/clipart-restaurant-hotel-restaurant-1.png" alt="drawing" width="400"/>
 
+Uma API é criada quando uma empresa de software tem a intenção de que outros criadores de software desenvolvam produtos associados ao seu serviço.  O Google Maps é um dos grandes exemplos na área de APIs:  quando uma pessoa acessa uma página de um restaurante, por exemplo, é possível visualizar dentro do próprio site o mapa do Google Maps para saber a localização do estabelecimento e verificar qual o melhor caminho para chegar até lá. Esse procedimento é realizado por meio de uma API, onde os desenvolvedores do site do restaurante utilizam do código do Google Maps para inseri-lo em um determinado local de sua página permitindo com que a página do restaurante apresente a funcionalidade de localização sem a necessidade de que seus desenvolvedores escrevam todo o código do zero. Perceba os ganhos de tempo, qualidade e produtividade que as APIs agregam!
 
+***
+### O fluxo assíncrono e as APIs
 
