@@ -1,6 +1,6 @@
 # JavaScript Promises
 
-### <ins>Tópicos</ins>
+### Tópicos
 * #### O que vamos aprender
 * #### Porque isso é importante
   <details>
@@ -14,4 +14,5 @@
   
 * #### Exercícios
 * #### Recursos Adicionais
-<hr>
+
+### O que vamos aprender
