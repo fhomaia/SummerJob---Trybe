@@ -1,8 +1,8 @@
 # JavaScript Promises
 
 ### Tópicos
-* #### [O que vamos aprender?](#O-que-vamos-aprender?)
-* #### Por que isso é importante?
+* [O que vamos aprender?](#O-que-vamos-aprender?)
+* [Por que isso é importante?](#O-que-vamos-aprender?)
   <details>
     <summary> <strong>Conteúdos</strong> </summary>
     
