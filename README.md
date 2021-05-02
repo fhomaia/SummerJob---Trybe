@@ -1,6 +1,6 @@
 # JavaScript Promises
 
-### Tópicos
+### <u>Tópicos<u>
 * #### O que vamos aprender
 * #### Porque isso é importante
 * <details>
