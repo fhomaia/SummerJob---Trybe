@@ -3,7 +3,7 @@
 ### <ins>Tópicos</ins>
 * #### O que vamos aprender
 * #### Porque isso é importante
-* <details>
+  <details>
     <summary> <strong>Conteúdos</strong> </summary>
     
     1. Application Programming Interface (API) 
