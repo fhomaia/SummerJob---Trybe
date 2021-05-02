@@ -4,7 +4,7 @@
 * #### O que vamos aprender
 * #### Porque isso é importante
 * <details>
-    <summary> <strong>Conteúdos<strong> </summary>
+    <summary> <strong>Conteúdos</strong> </summary>
     
     1. Application Programming Interface (API) 
     2. Relemebrando o fluxo assíncrono
