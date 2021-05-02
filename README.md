@@ -1,2 +1,8 @@
-# SummerJob---Trybe
-Este repositório contém a resposta ao desafio técnico proposto no processo seletivo de Summer Job da Trybe
+# JavaScript Promises
+
+### Tópicos
+#### O que vamos aprender
+#### Porque isso é importante
+#### Conteúdos
+#### Exercícios
+#### Recursos Adicionais
