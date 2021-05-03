@@ -95,4 +95,4 @@ return reject(number);
 .then((resolve) => console.log(‘Sucesso! Nosso número foi {number}’)
 .catch((reject) => console.log(‘Não foi desta vez. Nosso número foi {number}’))
 ```
-Uma outra forma de declarar uma _Promise_ é utilizando a estrutura de async/await
+Uma outra forma de declarar uma _Promise_ é utilizando a estrutura de **async/await**
