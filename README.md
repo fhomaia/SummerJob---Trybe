@@ -8,7 +8,7 @@
     
     1. [Application Programming Interface (API)](#Application-Programming-Interface-(API))
     2. [O fluxo assíncrono e as APIs](#O-fluxo-assíncrono-e-as-APIs)
-    3. Promises
+    3. [Promises](#Promises)
     4. Para fixar
   </details> 
   
@@ -52,3 +52,27 @@ Apesar das muitas vantagens proporcionadas pelo uso de APIs também existem algu
 A resposta para este dilema é **tratar de forma assíncrona a requisição à API**. Como vimos anteriormente, o fluxo padrão do JavaScript segue um modelo de cascata (o código é lido de cima para baixo) no qual a próxima linha de código só é lida quando a execução da linha de código anterior é finalizada. Quando tratamos uma função de forma assíncrona possibilitamos quebrar esta sequência de forma que esta função não trave a leitura do restante do código.
 
 Você já sabe a definição de uma API, sabe que devemos fazer a requisição para uma API de forma assíncrona mas ainda não respondemos uma pergunta. Como fazer esta requisição à API?  Continue no conteúdo para encontrar a resposta!
+
+### Promises
+
+Foi dito que as Promises são utilizadas para fazer uma implementação assíncrona no código e será a partir delas que responderemos à pergunta de como fazemos uma requisição a uma API. Mas antes, vamos estudar a estrutura de uma Promise afim de entendermos melhor seu funcionamento para então vermos sua aplicação.
+
+Para iniciar uma Promise seguimos a seguinte estrutura:
+
+1. Começamos com um construtor <new Promise>. O construtor recebe dois parâmetros: resolve, que atua quando a Promise der certo e reject que atua quando a Promise falhar. (Perceba que temos uma relação de condição).
+```
+const promise = new Promise ((resolve,reject) => {
+});
+```
+2. Para simular uma situação de sucesso e erro, vamos utilizar o Math.random() para sortear um valor de 0 a 10. Se o valor for entre 0 e 5 (com 5 incluso), será um fracasso, caso o valor seja entre 6 e 10, será um sucesso. Sendo assim nosso código ficaria:
+```
+const promise = new Promise ((resolve,reject) => {
+
+const number =  Math.random() * 10
+if (number > 5) {
+resolve(console.log(‘Sucesso! Nosso número foi {number}’));
+}
+return reject(console.log(‘Não foi desta vez. Nosso número foi {number}’));
+
+});
+```
