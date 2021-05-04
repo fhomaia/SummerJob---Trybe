@@ -61,7 +61,7 @@ Foi dito que as _Promises_ são utilizadas para fazer uma implementação assín
 
 Para iniciar uma Promise seguimos a seguinte estrutura:
 
-1. Começamos com um construtor `new Promise`. O construtor recebe dois parâmetros: resolve, que atua quando a _Promise_ der certo e reject que atua quando a _Promise_ falhar. (Perceba que temos uma relação de condição).
+1. Começamos com um construtor `new Promise`. O construtor recebe dois parâmetros: **resolve**, que atua quando a _Promise_ der certo e **reject** que atua quando a _Promise_ falhar. (Perceba que temos uma relação de condição).
 ```
 const promise = new Promise ((resolve,reject) => {
 });
@@ -78,9 +78,9 @@ return reject(console.log(‘Não foi desta vez. Nosso número foi {number}’))
 
 });
 ```
-Resolve e reject funcionam como o `return` de uma função porém, diferentemente do `return` eles não interrompem a execução da função e por isso devemos usar `return`  antes de um deles quando não se quer que a execução continue.
+Resolve e reject funcionam como o `return` de uma função porém, diferentemente do `return` eles não interrompem a execução da função, por isso devemos usar `return`  antes de um deles quando não se quer que a execução da função continue.
 
-3. As _Promises_ nos permitem usar, em especial, dois gestores de fluxo: o `.then` e o `.catch`. Estes gestores permitem encadear a saída da _Promise_ a alguma outra ação que se deseja executar e garantem que esta outra ação só será executada quando a _Promise_ retornar a requisição. A diferença entre os dois gestores é que o `.then` trata da saída quando há sucesso e o `.catch` quando há erro. É importante ressaltar que o `.catch()` "pega" qualquer erro que acontecer dentro de qualquer `.then()` anterior a ele. Por esse motivo é geralmente usado no final. Podemos refatorar o código acima da seguinte maneira:
+3. As _Promises_ nos permitem usar, em especial, dois gestores de fluxo: o `.then` e o `.catch`. Estes gestores permitem encadear a saída da _Promise_ a alguma outra ação que se deseja executar e garantem que esta outra ação só será executada quando a _Promise_ retornar a requisição. A diferença entre os dois gestores é que o `.then` trata da saída quando há sucesso e o `.catch` quando há erro. É importante ressaltar que o `.catch()` "pega" qualquer erro que acontecer dentro de qualquer `.then()` anterior a ele e por esse motivo é geralmente usado no final. Podemos refatorar o código acima da seguinte maneira:
 
 ```
 const promise = new Promise ((resolve,reject) => {
@@ -95,4 +95,8 @@ return reject(number);
 .then((resolve) => console.log(‘Sucesso! Nosso número foi {number}’)
 .catch((reject) => console.log(‘Não foi desta vez. Nosso número foi {number}’))
 ```
+#### Fetch
+Para fazermos uma requisição a uma API utilizamos a função ```fetch``` que nada mais é do que uma _Promise_ embutida em uma função. Fecth já traz internamente em seu código todo o caminho de construção de uma Promise, ou seja, vocẽ não precisa se preocupar com essa parte ao utilizá-la. Os parâmetros que fetch deve receber são explicitados na documentação de cada API mas geralmente o parâmetro é uma URL que chamamos de back-end. Uma API pode ter vários back-ends e cada um dará acesso a dados e funcionalidades diferentes da API. Relembrando da nossa analogia com o restaurante é como se cada back-end fosse um ítem do menu, selecionando diferentes itens você tem acesso a diferentes resultados. Vejamos um exemplo prático utilizando uma API que provê dados sobre países, para imprimir uma lista com o nome dos países:
+1. Na documentação da API, na parte de back-ends, localizamos o parâmetro a ser passado para a função fetch.
+
 Uma outra forma de declarar uma _Promise_ é utilizando a estrutura de **async/await**
