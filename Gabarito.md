@@ -1,5 +1,17 @@
 ### Exercício 1
+```
+const promise = new Promise ((resolve,reject) => {
 
+    const number =  Math.random() * 10
+    if (number > 4) {
+    resolve(console.log("A requisição teve sucesso!"));
+    }
+    return reject(console.log("A requisição falhou."));
+    
+    });
+ ```
+ 
+***
 
 ### Exercício 2
 
@@ -30,7 +42,7 @@ const fetchDogs = () => {
         response.message.map((dog) => {
         const section = document.getElementById('dog-section-images');
         const img = document.createElement('img');
-        img.style.width = "200px"
+        img.style.height = "200px"
         img.src = dog;
         section.appendChild(img)
         })      
