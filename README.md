@@ -33,7 +33,7 @@ ___
 
 Dando mais contexto ao uso das _Promises_ falaremos sobre as **APIs**. Mas o que seria uma API?
 
-API é o acrônimo para "Application Programming Interface" que significa em tradução para o português "**Interface** de Programação de Aplicativos".Ou seja,  nada mais é do que uma forma de comunicação entre sistemas. As APIs permitem a **integração entre dois sistemas**, em que um deles fornece informações e serviços que podem ser utilizados pelo outro.
+API é o acrônimo para "Application Programming Interface" que significa em tradução para o português "**Interface** de Programação de Aplicativos". Ou seja,  nada mais é do que uma forma de comunicação entre sistemas. As APIs permitem a **integração entre dois sistemas**, em que um deles fornece informações e serviços que podem ser utilizados pelo outro.
 
 Para assimilar melhor o conceito podemos fazer uma analogia com a seguinte situação: vamos supor que você esteja em um restaurante, olhe para o menu e se interesse por um dos itens. Como você faz pra que o restaurante fique ciente do seu interesse e entregue seu pedido? 
 Normalmente, solicitamos ao garçom, pois ele tem acesso à cozinha e poderá comunicar seu pedido ao chefe  e  retorná-lo à mesa quando tudo estiver pronto. Nesta metáfora você representa um sistema e a cozinha representa outro. Para requerer algo do sistema “cozinha” é necessário o garçom, que neste caso representa uma API.
