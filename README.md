@@ -186,5 +186,5 @@ Ou seja, a função tenta (_try_) executar a requisição e caso a tentativa sej
   * Acesse a documentação da API pelo link (https://dog.ceo/dog-api/) e encontre o back-end para gerar quatro imagens aleatórias de cachorros;
   * No VS Code , crie um arquivo .html. Sua página deve conter um título de sua escolha dentro de uma tag ```h1``` e uma ```section``` com uma ```id``` "dog-section-images";
   * Em um arquivo .js crie uma função que coloque como filhas da section criada, um número aleatório, entre 1 e 5, de imagens  de cachorros geradas a partir da API (não se esqueça de fazer um link do arquivo .js com o arquivo .html);
-  * Faça o tamanho das imagens ser igual a 200px;  
+  * Faça a altura das imagens ser igual a 200px;  
   * Fique à vontade para estilizar a página do seu jeito e colocar mais elementos!
