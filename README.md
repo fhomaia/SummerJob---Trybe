@@ -14,7 +14,7 @@
   
 * [Exercícios](#Exercícios)
 
-* #### Recursos Adicionais
+* [Recursos Adicionais](#Recursos-Adicionais)
 
 ___
 ### O que vamos aprender?
@@ -188,3 +188,11 @@ Ou seja, a função tenta (_try_) executar a requisição e caso a tentativa sej
   * Em um arquivo .js crie uma função que coloque como filhas da section criada, um número aleatório, entre 1 e 5, de imagens  de cachorros geradas a partir da API (não se esqueça de fazer um link do arquivo .js com o arquivo .html);
   * Faça a altura das imagens ser igual a 200px;  
   * Fique à vontade para estilizar a página do seu jeito e colocar mais elementos!
+  
+  ***
+
+### Recursos Adicionais
+
+* [What is an API?](https://www.youtube.com/watch?v=s7wmiS2mSXY)
+* [How to read and understand documentation](https://scottbarstow.com/apis-how-to-read-and-understand-documentation/)
+* [Async JS and Promises Quiz](https://www.codingame.com/playgrounds/347/javascript-promises-mastering-the-asynchronous/its-quiz-time)
