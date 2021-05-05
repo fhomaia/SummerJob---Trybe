@@ -9,7 +9,7 @@
     1. [Application Programming Interface (API)](#Application-Programming-Interface-(API))
     2. [O fluxo assíncrono e as APIs](#O-fluxo-assíncrono-e-as-APIs)
     3. [Promises](#Promises)
-    4. [Async/Await](#Async/Await)
+    4. [Async/Await](#asyncawait)
   </details> 
   
 * #### Exercícios
