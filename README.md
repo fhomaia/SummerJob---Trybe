@@ -6,7 +6,7 @@
   <details>
     <summary> <strong>Conteúdos</strong> </summary>
     
-    1. [Application Programming Interface (API)](#Application-Programming-Interface-(API))
+    1. [Application Programming Interface (API)](#application-programming-interface-api)
     2. [O fluxo assíncrono e as APIs](#O-fluxo-assíncrono-e-as-APIs)
     3. [Promises](#Promises)
     4. [Async/Await](#asyncawait)
