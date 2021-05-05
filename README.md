@@ -9,7 +9,7 @@
     1. [Application Programming Interface (API)](#Application-Programming-Interface-(API))
     2. [O fluxo assíncrono e as APIs](#O-fluxo-assíncrono-e-as-APIs)
     3. [Promises](#Promises)
-    4. [Async/Await](#Async-e-Await)
+    4. [Async/Await](#Async-/-Await)
   </details> 
   
 * #### Exercícios
@@ -142,9 +142,9 @@ Acesse a documentação da API pelo link (https://restcountries.eu)
 
 ***
 
-### Async e Await
+### Async/Await
 
-Uma outra forma de declarar uma _Promise_ é utilizando a estrutura de **async/await**. O async transforma qualquer função em uma promise e para começar a usá-lo, basta colocar o async antes da definição da função. Já o await pausa a execução da função assíncrona e espera pela resolução da Promise passada pelo async. Depois retoma a execução da função assíncrona e retorna o valor resolvido. Nossa função que imprime a lista de países ficaria da seguinte forma usando async/await:
+Uma outra forma de declarar uma _Promise_ é utilizando a estrutura de **async/await**. O async transforma qualquer função em uma promise e para começar a usá-lo, basta colocar o async antes da definição da função. Já o await pausa a execução da função assíncrona e espera pela resolução da Promise passada pelo async, depois retoma a execução da função assíncrona e retorna o valor resolvido. Nossa função que imprime a lista de países ficaria da seguinte forma usando async/await:
 
 ```
 const fetch = require('node-fetch');
