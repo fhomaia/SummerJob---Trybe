@@ -9,7 +9,7 @@
     1. [Application Programming Interface (API)](#Application-Programming-Interface-(API))
     2. [O fluxo assíncrono e as APIs](#O-fluxo-assíncrono-e-as-APIs)
     3. [Promises](#Promises)
-    4. Para fixar
+    4. [Async/Await](#Async/Await)
   </details> 
   
 * #### Exercícios
@@ -66,7 +66,7 @@ Para iniciar uma Promise seguimos a seguinte estrutura:
 const promise = new Promise ((resolve,reject) => {
 });
 ```
-2. Para simular uma situação de sucesso e erro, vamos utilizar o Math.random() para sortear um valor de 0 a 10. Se o valor for entre 0 e 5 (com 5 incluso), será um fracasso, caso o valor seja entre 6 e 10, será um sucesso. Sendo assim nosso código ficaria:
+2. Para simular uma situação de sucesso e erro, vamos utilizar o _Math.random()_ para sortear um valor de 0 a 10. Se o valor for entre 0 e 5 (com 5 incluso), será um fracasso, caso o valor seja entre 6 e 10, será um sucesso. Sendo assim nosso código ficaria:
 ```
 const promise = new Promise ((resolve,reject) => {
 
@@ -96,7 +96,81 @@ return reject(number);
 .catch((reject) => console.log(‘Não foi desta vez. Nosso número foi {number}’))
 ```
 #### Fetch
-Para fazermos uma requisição a uma API utilizamos a função ```fetch``` que nada mais é do que uma _Promise_ embutida em uma função. Fecth já traz internamente em seu código todo o caminho de construção de uma Promise, ou seja, vocẽ não precisa se preocupar com essa parte ao utilizá-la. Os parâmetros que fetch deve receber são explicitados na documentação de cada API mas geralmente o parâmetro é uma URL que chamamos de back-end. Uma API pode ter vários back-ends e cada um dará acesso a dados e funcionalidades diferentes da API. Relembrando da nossa analogia com o restaurante é como se cada back-end fosse um ítem do menu, selecionando diferentes itens você tem acesso a diferentes resultados. Vejamos um exemplo prático utilizando uma API que provê dados sobre países, para imprimir uma lista com o nome dos países:
+Para fazermos uma requisição a uma API utilizamos a função ```fetch``` que nada mais é do que uma _Promise_ embutida em uma função. _Fetch_ já traz internamente em seu código todo o caminho de construção de uma Promise, ou seja, vocẽ não precisa se preocupar com essa parte ao utilizá-la. Os parâmetros que fetch deve receber são explicitados na documentação de cada API mas geralmente é uma URL que chamamos de back-end. Uma API pode ter vários back-ends e cada um dará acesso a dados e funcionalidades diferentes da API. Relembrando da nossa analogia com o restaurante, é como se cada back-end fosse um ítem do menu, selecionando diferentes itens você tem acesso a diferentes resultados. Vejamos um exemplo prático utilizando uma API que provê dados sobre países para imprimir uma lista com o nome dos países:
+* Antes de irmos para o código, como vamos rodar nosso código direto no Node e não no browser, precisamos instalar o node-fetch . Execute o comando abaixo caso você ainda não tenha o package.json.
+```
+npm init -y
+```
+* depois, instale o node-fetch e importe _fetch_ para um arquivo com extensão .js
+```
+npm i node-fetch //no terminal//
+const fetch = require('node-fetch'); //em um arquvio .js//
+```
 1. Na documentação da API, na parte de back-ends, localizamos o parâmetro a ser passado para a função fetch.
+2. Então escrevemos no arquivo o seguinte código: 
+```
+const fetch = require('node-fetch');
 
-Uma outra forma de declarar uma _Promise_ é utilizando a estrutura de **async/await**
+const fetchCountries = () => {
+    return fetch('https://restcountries.eu/rest/v2/all')
+```
+Geralmente as APIs retornam dados no formato JSON (Java Script Object Notation) que é basicamente uma forma de representarmos dados como objetos Javascript.
+
+3. Utilizando o gestor de fluxo _.then_ captamos a resposta da API e utilizamos o método ```.json``` para transformá-la em um array de objetos JavaScript:
+```
+const fetch = require('node-fetch');
+
+const fetchCountries = () => {
+    return fetch('https://restcountries.eu/rest/v2/all')
+    .then((response) => response.json())
+ ```
+
+4. Por último vamos utilizar a _HOF_ map para imprimir cada um dos países constidos do array de objetos na tela.
+```
+const fetch = require('node-fetch');
+
+const fetchCountries = () => {
+    return fetch('https://restcountries.eu/rest/v2/all')
+    .then((response) => response.json())
+    .then((countries) => console.log(countries.map((country) => country.name)));
+}
+
+fetchCountries();
+```
+Para praticar tente usar a mesma API para imprimir as capitais de cada país ao lado de seu respectivo nome.
+Acesse a documentação da API pelo link (https://restcountries.eu)
+
+***
+
+### Async/Await
+
+Uma outra forma de declarar uma _Promise_ é utilizando a estrutura de **async/await**. O async transforma qualquer função em uma promise e para começar a usá-lo, basta colocar o async antes da definição da função. Já o await pausa a execução da função assíncrona e espera pela resolução da Promise passada pelo async. Depois retoma a execução da função assíncrona e retorna o valor resolvido. Nossa função que imprime a lista de países ficaria da seguinte forma usando async/await:
+
+```
+const fetch = require('node-fetch');
+
+const fetchCountries = async () => {
+    const getCountries = await fetch('https://restcountries.eu/rest/v2/all')
+    .then((response) => response.json())
+    
+    return getCountries.map((country) => country.name);
+}
+
+console.log(fetchCountries());
+```
+Para o caso de erro utilizamos os gestores **try/catch**. Então se quiséssemos imprimir uma mensagem de erro para quando nossa requisição falhar faríamos:
+```
+const fetch = require('node-fetch');
+try{
+    const fetchCountries = async () => {
+        const getCountries = await fetch('https://restcountries.eu/rest/v2/all')
+        .then((response) => response.json())
+  
+        return getCountries.map((country) => country.name);
+    } 
+} catch {
+    return ' A API falhou :( '
+  }
+console.log(fetchCountries());
+```
+Ou seja, a função tenta executar a requisição (_try_) e caso a tentativa seja mal sucedida ela capta (_catch_) o erro e devolve uma resposta indicativa da falha.
