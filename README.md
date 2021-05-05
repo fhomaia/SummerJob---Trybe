@@ -173,4 +173,4 @@ try{
   }
 console.log(fetchCountries());
 ```
-Ou seja, a função tenta executar a requisição (_try_) e caso a tentativa seja mal sucedida ela capta (_catch_) o erro e devolve uma resposta indicativa da falha.
+Ou seja, a função tenta(_try_) executar a requisição e caso a tentativa seja mal sucedida ela capta (_catch_) o erro e devolve uma resposta indicativa da falha.
