@@ -12,7 +12,8 @@
     4. [Async/Await](#asyncawait)
   </details> 
   
-* #### Exercícios
+* [Exercícios](#Exercícios)
+
 * #### Recursos Adicionais
 
 ___
@@ -107,6 +108,7 @@ npm i node-fetch //no terminal//
 const fetch = require('node-fetch'); //em um arquvio .js//
 ```
 1. Na documentação da API, na parte de back-ends, localizamos o parâmetro a ser passado para a função fetch.
+![API1](https://user-images.githubusercontent.com/78622290/117154495-476ba700-ad92-11eb-922c-99b5bebc24eb.png)
 2. Então escrevemos no arquivo o seguinte código: 
 ```
 const fetch = require('node-fetch');
@@ -125,7 +127,7 @@ const fetchCountries = () => {
     .then((response) => response.json())
  ```
 
-4. Por último vamos utilizar a _HOF_ map para imprimir cada um dos países constidos do array de objetos na tela.
+4. Por último vamos utilizar a _HOF_ map para imprimir cada um dos países contidos do array de objetos na tela.
 ```
 const fetch = require('node-fetch');
 
@@ -174,3 +176,15 @@ try{
 console.log(fetchCountries());
 ```
 Ou seja, a função tenta (_try_) executar a requisição e caso a tentativa seja mal sucedida ela capta (_catch_) o erro e devolve uma resposta indicativa da falha.
+
+***
+### Exercícios
+
+1. Construa uma _Promise_ que tenha 60% de chance de sucesso. Caso haja sucesso a _Promise_ deve retornar uma mensagem com os dizeres "A requisição teve sucesso!" e caso haja erro a _Promise_ deve retornar uma mensagem com os dizeres "A requisição falhou.".
+
+2. Para o segundo exercício utilizaremos uma API que gera imagens aleatórias de cachorros e outra que gera fatos aleatórios sobre cachorros:
+  * Acesse a documentação da API pelo link (https://dog.ceo/dog-api/) e encontre o back-end para gerar quatro imagens aleatórias de cachorros;
+  * No VS Code , crie um arquivo .html. Sua página deve conter um título de sua escolha dentro de uma tag ```h1``` e uma ```section``` com uma ```id``` "dog-section-images";
+  * Em um arquivo .js crie uma função que coloque dentro da section criada, 4 imagens aleatórias de cachorros geradas a partir da API (não se esqueça de fazer um link do arquivo .js com o arquivo .html);
+  * Crie uma outra ```section``` de ```id``` "dog-section-facts" no seu arquivo .html e a partir da API Dog Facts (https://dukengn.github.io/Dog-facts-API/) faça com que um número aleatório, entre 1 e 5 , de fatos sobre cachorros apareça na página dentro da section criada;
+  * Fique à vontade para estilizar a página do seu jeito!
