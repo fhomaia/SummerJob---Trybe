@@ -182,9 +182,9 @@ Ou seja, a função tenta (_try_) executar a requisição e caso a tentativa sej
 
 1. Construa uma _Promise_ que tenha 60% de chance de sucesso. Caso haja sucesso a _Promise_ deve retornar uma mensagem com os dizeres "A requisição teve sucesso!" e caso haja erro a _Promise_ deve retornar uma mensagem com os dizeres "A requisição falhou.".
 
-2. Para o segundo exercício utilizaremos uma API que gera imagens aleatórias de cachorros e outra que gera fatos aleatórios sobre cachorros:
+2. Para o segundo exercício utilizaremos uma API que gera imagens aleatórias de cachorros:
   * Acesse a documentação da API pelo link (https://dog.ceo/dog-api/) e encontre o back-end para gerar quatro imagens aleatórias de cachorros;
   * No VS Code , crie um arquivo .html. Sua página deve conter um título de sua escolha dentro de uma tag ```h1``` e uma ```section``` com uma ```id``` "dog-section-images";
-  * Em um arquivo .js crie uma função que coloque dentro da section criada, 4 imagens aleatórias de cachorros geradas a partir da API (não se esqueça de fazer um link do arquivo .js com o arquivo .html);
-  * Crie uma outra ```section``` de ```id``` "dog-section-facts" no seu arquivo .html e a partir da API Dog Facts (https://dukengn.github.io/Dog-facts-API/) faça com que um número aleatório, entre 1 e 5 , de fatos sobre cachorros apareça na página dentro da section criada;
-  * Fique à vontade para estilizar a página do seu jeito!
+  * Em um arquivo .js crie uma função que coloque como filhas da section criada, um número aleatório, entre 1 e 5, de imagens  de cachorros geradas a partir da API (não se esqueça de fazer um link do arquivo .js com o arquivo .html);
+  * Faça o tamanho das imagens ser igual a 200px;  
+  * Fique à vontade para estilizar a página do seu jeito e colocar mais elementos!
