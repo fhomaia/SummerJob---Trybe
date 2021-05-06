@@ -41,18 +41,18 @@ Normalmente, solicitamos ao garçom, pois ele tem acesso à cozinha e poderá co
 
 <img src="https://webstockreview.net/images/clipart-restaurant-hotel-restaurant-1.png" alt="Analogia restaurante API" width="400"/>
 
-Uma API é criada quando uma empresa de software tem a intenção de que outros criadores de software desenvolvam produtos associados ao seu serviço.  O Google Maps é um dos grandes exemplos na área de APIs:  quando uma pessoa acessa uma página de um restaurante, por exemplo, é possível visualizar dentro do próprio site o mapa do Google Maps para saber a localização do estabelecimento e verificar qual o melhor caminho para chegar até lá. Esse procedimento é realizado por meio de uma API, onde os desenvolvedores do site do restaurante utilizam do código do Google Maps para inseri-lo em um determinado local de sua página permitindo com que a página do restaurante apresente a funcionalidade de localização sem a necessidade de que seus desenvolvedores escrevam todo o código do zero. Perceba os ganhos de tempo, qualidade e produtividade que as APIs agregam!
+Uma API é criada quando uma empresa de software tem a intenção de que outros criadores de software desenvolvam produtos associados ao seu serviço.  O Google Maps é um dos grandes exemplos na área de APIs:  quando uma pessoa acessa uma página de um restaurante, por exemplo, é possível visualizar dentro do próprio site o mapa do Google Maps para saber a localização do estabelecimento e verificar qual o melhor caminho para chegar até lá. Logo, os desenvolvedores do site do restaurante utilizam do código do Google Maps para inseri-lo em um determinado local de sua página permitindo com que a página do restaurante apresente a funcionalidade de localização sem a necessidade de que seus desenvolvedores escrevam todo o código do zero. Perceba os ganhos de tempo, qualidade e produtividade que as APIs agregam!
 
 ***
 ### O fluxo assíncrono e as APIs
 
-Apesar das muitas vantagens proporcionadas pelo uso de APIs também existem algumas desvantagens que não podem ser ignoradas. APIs podem ser muito complexas, conter uma base de dados densa e um número de operações extenso e todos estes fatores impactam no tempo de resposta da API à uma solicitação feita. Imagine se toda a sua aplicação tiver que esperar o resultado de uma API para ser carregada, imagine no caso restaurante, se os clientes não conseguissem ver os produtos, preços e realizar seus pedidos até que os dados do Google Maps fossem carregados, não seria nada interessante não é mesmo? De acordo com dados do Kissmetrics, 47% dos clientes esperam que o carregamento de uma página seja feito em 2 segundos ou, se possível, menos do que isso. Se demorar 3 segundos, 40% abandonam o site, sendo que um atraso de um segundo pode diminuir 7% das conversões (vendas efetivadas). Isto significa que a **demora do tempo de resposta das APIS** é um problema que precisa ser tratado para que não afete no desempenho do resto da aplicação.
+Apesar das muitas vantagens proporcionadas pelo uso de APIs também existem algumas desvantagens que não podem ser ignoradas. APIs podem ser muito complexas, conter uma base de dados densa e um número de operações extenso e todos estes e outros fatores impactam no tempo de resposta da API à uma solicitação feita. Imagine se toda a sua aplicação tiver que esperar o resultado de uma API para ser carregada, imagine no caso restaurante, se os clientes não conseguissem ver os produtos, preços e realizar seus pedidos até que os dados do Google Maps fossem carregados, não seria nada interessante não é mesmo? De acordo com dados do Kissmetrics, 47% dos clientes esperam que o carregamento de uma página seja feito em 2 segundos ou, se possível, menos do que isso. Se demorar 3 segundos, 40% abandonam o site, sendo que um atraso de um segundo pode diminuir 7% das conversões (vendas efetivadas). Isto significa que a **demora do tempo de resposta das APIS** é um problema que precisa ser tratado para que não afete no desempenho do resto da aplicação.
 
 <img src="https://fiquebemdevida.files.wordpress.com/2018/01/tempo-e-dinheiro.jpg?w=626" alt="tempoédinheiro" width="400"/>
 
 A resposta para este dilema é **tratar de forma assíncrona a requisição à API**. Como vimos anteriormente, o fluxo padrão do JavaScript segue um modelo de cascata (o código é lido de cima para baixo) no qual a próxima linha de código só é lida quando a execução da linha de código anterior é finalizada. Quando tratamos uma função de forma assíncrona possibilitamos quebrar esta sequência de forma que esta função não trave a leitura do restante do código.
 
-Você já sabe a definição de uma API, sabe que devemos fazer a requisição para uma API de forma assíncrona mas ainda não respondemos uma pergunta. Como fazer esta requisição à API?  Continue no conteúdo para encontrar a resposta!
+Você já sabe a definição de uma API, sabe que devemos fazer a requisição para uma API de forma assíncrona mas ainda não respondemos uma pergunta. Como fazer esta requisição? Continue no conteúdo para encontrar a resposta!
 
 ***
 
@@ -97,12 +97,12 @@ return reject(number);
 .catch((reject) => console.log(‘Não foi desta vez. Nosso número foi {number}’))
 ```
 #### Fetch
-Para fazermos uma requisição a uma API utilizamos a função ```fetch``` que nada mais é do que uma _Promise_ embutida em uma função. _Fetch_ já traz internamente em seu código todo o caminho de construção de uma Promise, ou seja, vocẽ não precisa se preocupar com essa parte ao utilizá-la. Os parâmetros que fetch deve receber são explicitados na documentação de cada API mas geralmente é uma URL que chamamos de back-end. Uma API pode ter vários back-ends e cada um dará acesso a dados e funcionalidades diferentes da API. Relembrando da nossa analogia com o restaurante, é como se cada back-end fosse um ítem do menu, selecionando diferentes itens você tem acesso a diferentes resultados. Vejamos um exemplo prático utilizando uma API que provê dados sobre países para imprimir uma lista com o nome dos países:
+Para fazermos uma requisição a uma API utilizamos a função ```fetch``` que nada mais é do que uma _Promise_ embutida em uma função. _Fetch_ já traz internamente em seu código todo o caminho de construção de uma Promise, ou seja, vocẽ não precisa se preocupar com essa parte ao utilizá-la. Os parâmetros que fetch deve receber são explicitados na documentação de cada API mas geralmente é uma URL que chamamos de back-end. Uma API pode ter vários back-ends e cada um dará acesso a dados e funcionalidades diferentes da API. Relembrando da nossa analogia com o restaurante, é como se cada back-end fosse um item do menu, selecionando diferentes itens você tem acesso a diferentes resultados. Vejamos um exemplo prático utilizando uma API que provê dados sobre países para imprimir uma lista com o nome dos países:
 * Antes de irmos para o código, como vamos rodar nosso código direto no Node e não no browser, precisamos instalar o node-fetch . Execute o comando abaixo caso você ainda não tenha o package.json.
 ```
 npm init -y
 ```
-* depois, instale o node-fetch e importe _fetch_ para um arquivo com extensão .js
+* depois, instale o node-fetch e importe _fetch_ em um arquivo com extensão .js
 ```
 npm i node-fetch //no terminal//
 const fetch = require('node-fetch'); //em um arquvio .js//
@@ -146,16 +146,16 @@ Acesse a documentação da API pelo link (https://restcountries.eu)
 
 ### Async/Await
 
-Uma outra forma de declarar uma _Promise_ é utilizando a estrutura de **async/await**. O async transforma qualquer função em uma promise e para começar a usá-lo, basta colocar o async antes da definição da função. Já o await pausa a execução da função assíncrona e espera pela resolução da Promise passada pelo async, depois retoma a execução da função assíncrona e retorna o valor resolvido. Nossa função que imprime a lista de países ficaria da seguinte forma usando async/await:
+Uma outra forma de declarar uma _Promise_ é utilizando a estrutura de **async/await**. O async transforma qualquer função em uma _Promise_ e para começar a usá-lo, basta colocar o async antes da definição da função. Já o await pausa a execução da função assíncrona e espera pela resolução da _Promise_ passada pelo async, depois retoma a execução da função assíncrona e retorna o valor resolvido. Nossa função que imprime a lista de países ficaria da seguinte forma usando async/await:
 
 ```
 const fetch = require('node-fetch');
 
 const fetchCountries = async () => {
     const getCountries = await fetch('https://restcountries.eu/rest/v2/all')
-    .then((response) => response.json())
+    const getCountriesResponse = await getCountries.json()
     
-    return getCountries.map((country) => country.name);
+    return getCountriesResponse.map((country) => country.name);
 }
 
 console.log(fetchCountries());
@@ -163,12 +163,12 @@ console.log(fetchCountries());
 Para o caso de erro utilizamos os gestores **try/catch**. Então se quiséssemos imprimir uma mensagem de erro para quando nossa requisição falhar faríamos:
 ```
 const fetch = require('node-fetch');
-try{
+try {
     const fetchCountries = async () => {
-        const getCountries = await fetch('https://restcountries.eu/rest/v2/all')
-        .then((response) => response.json())
-  
-        return getCountries.map((country) => country.name);
+    const getCountries = await fetch('https://restcountries.eu/rest/v2/all')
+    const getCountriesResponse = await getCountries.json()
+    
+    return getCountriesResponse.map((country) => country.name);
     } 
 } catch {
     return ' A API falhou :( '
@@ -183,10 +183,10 @@ Ou seja, a função tenta (_try_) executar a requisição e caso a tentativa sej
 1. Construa uma _Promise_ que tenha 60% de chance de sucesso. Caso haja sucesso a _Promise_ deve retornar uma mensagem com os dizeres "A requisição teve sucesso!" e caso haja erro a _Promise_ deve retornar uma mensagem com os dizeres "A requisição falhou.".
 
 2. Para o segundo exercício utilizaremos uma API que gera imagens aleatórias de cachorros:
-  * Acesse a documentação da API pelo link (https://dog.ceo/dog-api/) e encontre o back-end para gerar quatro imagens aleatórias de cachorros;
+  * Acesse a documentação da API pelo link (https://dog.ceo/dog-api/) e encontre o back-end para gerar imagens aleatórias de cachorros;
   * No VS Code , crie um arquivo .html. Sua página deve conter um título de sua escolha dentro de uma tag ```h1``` e uma ```section``` com uma ```id``` "dog-section-images";
-  * Em um arquivo .js crie uma função que coloque como filhas da section criada, um número aleatório, entre 1 e 5, de imagens  de cachorros geradas a partir da API (não se esqueça de fazer um link do arquivo .js com o arquivo .html);
-  * Faça a altura das imagens ser igual a 200px;  
+  * Em um arquivo .js crie uma função que coloque como filhas da section criada, um número aleatório entre 1 e 5, de imagens de cachorros geradas a partir da API (não se esqueça de linkar o arquivo .js com o arquivo .html);
+  * Faça a  propriedade altura das imagens ser igual a 200px;  
   * Fique à vontade para estilizar a página do seu jeito e colocar mais elementos!
   
   ***
